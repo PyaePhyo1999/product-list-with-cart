@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 
 export type CartRecord<T> = Record<string, T & { qty: number }>;
-export function useCart<T extends { name: string; price: number }>(productsKey = "name") {
+export function useCart<T extends { name: string; price: number }>() {
     const [cart, setCart] = useState<CartRecord<T>>({});
 
     const add = (item: T) => {
